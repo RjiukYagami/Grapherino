@@ -21,4 +21,7 @@ type Edge_t
 (* Similar funtion to compare as it is in Vertex_compare, look higher *)
 val Edge_compare : Edge_t -> Edge_t -> int
 
+(* Array of array of Edge_t, that's how we will represent SmallGraph *)
+val Connetions : Edge_t array array
+
 end
