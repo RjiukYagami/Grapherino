@@ -21,7 +21,12 @@ type edge_t
 (* Similar funtion to compare as it is in Vertex_compare, look higher *)
 val edge_compare : edge_t -> edge_t -> int
 
-(* funtion which create our graph *)
+(* Funtion which create our graph *)
 val create : int -> edge_t array array
+
+(* Function which build unweighted edges in graph. We put our graph from function "create" 
+   and option if it's direted or not (defaultly it's undirected), and we put list of tuples int * int.
+   Every tuple mean edge between two vertices *)
+val build_unweighted : graph:edge_t array array -> directed:bool -> int * int list -> bool
 
 end
