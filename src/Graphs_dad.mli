@@ -21,4 +21,7 @@ type edge_t
 (* Similar funtion to compare as it is in Vertex_compare, look higher *)
 val edge_compare : edge_t -> edge_t -> int
 
+(* inital value, this say what value have empty edge *)
+val init_value : edge_t
+
 end

@@ -1,10 +1,10 @@
 module Make_smallGraph ( Graph : Graphs_dad ) = struct
 
 (* Funtion which create our graph  *)
-let create n init =
-  let result = Array.create n (Array.create n init) in
+let create n =
+  let result = Array.create n (Array.create n Graph.init_value) in
     for i = 1 to n - 1 do
-      result.(i) <- Array.create n init
+      result.(i) <- Array.create n Graph.init_value
     done;
     result;;
 
@@ -23,9 +23,12 @@ let build ~graph:graph ~directed:direct list weight =
          aux (num+1) tl; )in
    aux 0 list
 
+(* Funtion which clear our graph *)
+let clear graph = 
+   let count = Array.length graph.(0) in
+      for i = 0 to count-1 do 
+         graph.(i) <- Array.create count Graph.init_value
+      done
 
-
-(* Funtion which will make our life easier, it's show every vertex and his connetion 
-val show_connetions : edge_t array array*)
 
 end
